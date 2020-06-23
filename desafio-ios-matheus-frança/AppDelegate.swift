@@ -16,8 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         setRoot()
-        window!.makeKeyAndVisible()
+        window?.makeKeyAndVisible()
+        setupNavbar()
         return true
+    }
+    
+    func setupNavbar() {
+        UINavigationBar.appearance().barTintColor = .red
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
     func setRoot() {
@@ -25,4 +32,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppCoordinator.goToHeroes(parent: window)
     }
 }
-

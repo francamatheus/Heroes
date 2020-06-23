@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -46,6 +46,9 @@
 		20EC3CC524A0F83000436BCA /* HeroesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesTableViewCell.swift; sourceTree = "<group>"; };
 		20EC3CC624A0F83000436BCA /* HeroesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroesTableViewCell.xib; sourceTree = "<group>"; };
 		20EC3CCC24A1016800436BCA /* HeroesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesModel.swift; sourceTree = "<group>"; };
+		41577290A6D51D16DCBDD372 /* Pods_desafio_ios_matheus_franc_a.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_desafio_ios_matheus_franc_a.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E2034CD8E1C0F4BFE656998 /* Pods-desafio-ios-matheus-frança.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-ios-matheus-frança.release.xcconfig"; path = "Target Support Files/Pods-desafio-ios-matheus-frança/Pods-desafio-ios-matheus-frança.release.xcconfig"; sourceTree = "<group>"; };
+		C85152BAEF03AF9003CB5A6F /* Pods-desafio-ios-matheus-frança.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-ios-matheus-frança.debug.xcconfig"; path = "Target Support Files/Pods-desafio-ios-matheus-frança/Pods-desafio-ios-matheus-frança.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,8 @@
 			children = (
 				20EC3C91249D585A00436BCA /* desafio-ios-matheus-frança */,
 				20EC3C90249D585A00436BCA /* Products */,
+				CBE16C1B3D1D6CC87C2A20F6 /* Pods */,
+				A932AE0DF0767A97E15CDBC1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,6 +177,23 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A932AE0DF0767A97E15CDBC1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41577290A6D51D16DCBDD372 /* Pods_desafio_ios_matheus_franc_a.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CBE16C1B3D1D6CC87C2A20F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C85152BAEF03AF9003CB5A6F /* Pods-desafio-ios-matheus-frança.debug.xcconfig */,
+				7E2034CD8E1C0F4BFE656998 /* Pods-desafio-ios-matheus-frança.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -179,9 +201,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20EC3CA3249D585C00436BCA /* Build configuration list for PBXNativeTarget "desafio-ios-matheus-frança" */;
 			buildPhases = (
+				02A23E1E76F3384F6857D1A8 /* [CP] Check Pods Manifest.lock */,
 				20EC3C8B249D585A00436BCA /* Sources */,
 				20EC3C8C249D585A00436BCA /* Frameworks */,
 				20EC3C8D249D585A00436BCA /* Resources */,
+				797CFEB8F4255E9667A20ED2 /* [CP] Embed Pods Frameworks */,
+				20DE414424A11EB40037F151 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -240,6 +265,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02A23E1E76F3384F6857D1A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-desafio-ios-matheus-frança-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		20DE414424A11EB40037F151 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		797CFEB8F4255E9667A20ED2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-desafio-ios-matheus-frança/Pods-desafio-ios-matheus-frança-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-desafio-ios-matheus-frança/Pods-desafio-ios-matheus-frança-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-desafio-ios-matheus-frança/Pods-desafio-ios-matheus-frança-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		20EC3C8B249D585A00436BCA /* Sources */ = {
@@ -379,6 +463,7 @@
 		};
 		20EC3CA4249D585C00436BCA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C85152BAEF03AF9003CB5A6F /* Pods-desafio-ios-matheus-frança.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -397,6 +482,7 @@
 		};
 		20EC3CA5249D585C00436BCA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E2034CD8E1C0F4BFE656998 /* Pods-desafio-ios-matheus-frança.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

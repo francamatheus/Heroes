@@ -21,18 +21,18 @@ class AppCoordinator {
     }
     
     class func goToHeroes(parent: Any) {
-        let startVc = HeroesViewController(nibName: "HeroesViewController", bundle: nil)
+        let startVc = HeroesViewController()
         let navController = UINavigationController(rootViewController: startVc)
         AppCoordinator.startViewController(newVC: navController, parent: parent)
     }
     
-    class func goToHeroDetail (parent: Any) {
-        let newVC = HeroDetailViewController(nibName: "HeroDetailViewController", bundle: nil)
+    class func goToHeroDetail(parent: Any, heroModel: HeroModel) {
+        let newVC = HeroDetailViewController(heroModel: heroModel)
         AppCoordinator.startViewController(newVC: newVC, parent: parent)
     }
     
     class func goToHeroHq(parent: Any) {
-        let loginVC = HeroHqViewController(nibName: "HeroHqViewController", bundle: nil)
+        let loginVC = HeroHqViewController()
         let navController = UINavigationController(rootViewController: loginVC)
         AppCoordinator.startViewController(newVC: navController, parent: parent)
     }

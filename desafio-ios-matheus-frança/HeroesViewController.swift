@@ -6,7 +6,6 @@
 //  Copyright © 2020 matheus.s.franca. All rights reserved.
 //
 
-
 import UIKit
 
 class HeroesViewController: UIViewController {
@@ -28,10 +27,10 @@ class HeroesViewController: UIViewController {
     // MARK: - Setup Functions
 
     func setupTableView() {
-        tableView.register(HeroesTableViewCell.self, forCellReuseIdentifier: "HeroesTableViewCell")
+        tableView.register(UINib(nibName: "HeroesTableViewCell", bundle: nil), forCellReuseIdentifier: "HeroesTableViewCell")
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
-        tableView.estimatedRowHeight = 50.0
+//        tableView.estimatedRowHeight = 50.0
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -77,7 +76,6 @@ extension HeroesViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let nav = self.navigationController else { return }
-        AppCoordinator.goToHeroDetail(parent: nav)
-        viewModel.didSelectItem(index: indexPath.row)
+        AppCoordinator.goToHeroDetail(parent: nav, heroModel: viewModel.heroForIndex(indexPath.row))
     }
 }

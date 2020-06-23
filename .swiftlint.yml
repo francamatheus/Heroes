@@ -1,0 +1,63 @@
+excluded:
+ - Pods
+
+disabled_rules:
+ - trailing_whitespace
+ - multiple_closures_with_trailing_closure
+ - function_parameter_count
+
+opt_in_rules:
+  - closure_end_indentation
+  - closure_spacing
+  - comments_space
+  - comments_capitalized_ignore_possible_code
+  - comments_capitalized_find_possible_code
+  - empty_count
+  - explicit_init
+  - explicit_failure_calls
+  - extension_access_modifier
+  - fatal_error_message
+  - first_where
+  - force_unwrapping
+  - force_cast
+  - implicitly_unwrapped_optional
+  - missing_docs
+  - multiline_parameters
+  - multiple_empty_lines
+  - nesting
+  - number_separator
+  - operator_usage_whitespace
+  - overridden_super_call
+  - prohibited_super_call
+  - protocol_property_accessors_order
+  - redundant_nil_coalescing
+  - sorted_imports
+  - syntactic_sugar
+  - vertical_parameter_alignment_on_call
+  - vertical_whitespace
+
+included: # paths to include during linting. `--path` is ignored if present.
+ #Lide-DEV
+ #Lide
+ #Lide-Hmg
+
+line_length: 
+  warning: 180 
+  error: 350
+  ignores_comments: true
+  ignores_urls: true
+
+cyclomatic_complexity:
+  ignores_case_statements: true
+  warning: 20
+
+identifier_name:
+  min_length: 2
+  max_length: 
+    warning: 30
+    error: 50
+  excluded:
+    - id
+
+
+
