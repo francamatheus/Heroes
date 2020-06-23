@@ -6,6 +6,7 @@
 //  Copyright © 2020 matheus.s.franca. All rights reserved.
 //
 
+import NVActivityIndicatorView
 import UIKit
 
 class HeroesViewController: UIViewController {
@@ -13,38 +14,46 @@ class HeroesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     var viewModel = HeroesViewModel()
+    
+    var loadingView: NVActivityIndicatorView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let screenSize = UIScreen.main.bounds
+        let frame = CGRect(x: (screenSize.width / 2) - 25, y: (screenSize.height / 2) - 50, width: 50, height: 50)
+        loadingView = NVActivityIndicatorView(frame: frame, type: .ballPulse, color: .red)
+        self.view.addSubview(loadingView ?? UIView())
         edgesForExtendedLayout = []
-
-        setupNavBarLayout()
         setupTableView()
         fetchData()
-        
+        setupNavBar()
+    }
+    
+    func setupNavBar() {
+        self.title = "Heróis"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
     // MARK: - Setup Functions
-
     func setupTableView() {
         tableView.register(UINib(nibName: "HeroesTableViewCell", bundle: nil), forCellReuseIdentifier: "HeroesTableViewCell")
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
-//        tableView.estimatedRowHeight = 50.0
+        tableView.estimatedRowHeight = 50.0
         tableView.delegate = self
         tableView.dataSource = self
     }
-
-    func setupNavBarLayout() {
-        self.title = "Heróis" // String.OS.localized.hpCharacters
-        self.navigationController?.tabBarItem.title = "Heroes"
-    }
     
     func fetchData() {
+        self.loadingView?.startAnimating()
         viewModel.fetchList(success: {
             self.tableView.reloadData()
+//            self.loadingView?.stopAnimating()
         }, error: { _ in
-            print("Erro")
+//            self.loadingView?.stopAnimating()
+            self.errorAlert(tryAgainMethod: {
+                self.fetchData()
+            })
         })
     }
 }

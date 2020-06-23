@@ -23,25 +23,46 @@ class HeroDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        descriptionLabel.text = hero?.description
-        nameLabel.text = hero?.name
-        descriptionLabel.numberOfLines = 0
-        
-        let url = URL(string: hero?.image ?? "")
-        pictureImageView.kf.setImage(with: url)
-        pictureImageView.contentMode = .scaleAspectFill
-        
-        hqButton.titleLabel?.text = "MOST EXPENSIVE HQ"
-
-        // Do any additional setup after loading the view.
+        setupLayout()
+        setupNavBar()
+        setupData()
     }
     
     func setupNavBar() {
+        self.title = hero?.name
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
+    func setupLayout() {
+        nameLabel.numberOfLines = 2
+        nameLabel.adjustsFontSizeToFitWidth = true
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 24)
         
+        descriptionLabel.numberOfLines = 0
+        
+        pictureImageView.contentMode = .scaleAspectFill
+        
+        hqButton.setTitle("MOST EXPENSIVE HQ", for: .normal)
+        hqButton.tintColor = .white
+        hqButton.backgroundColor = .red
+        hqButton.clipsToBounds = true
+        hqButton.layer.cornerRadius = 12
+    }
+    
+    func setupData() {
+        nameLabel.text = hero?.name
+        descriptionLabel.text = hero?.description
+        let url = URL(string: hero?.image ?? "")
+        pictureImageView.kf.setImage(with: url)
     }
     
     convenience init(heroModel: HeroModel) {
         self.init()
         self.hero = heroModel
+    }
+    
+    @IBAction func goToHq(_ sender: Any) {
+        guard let nav = self.navigationController, let id = hero?.id else { return }
+        AppCoordinator.goToHeroHq(parent: nav, heroId: id)
     }
 }

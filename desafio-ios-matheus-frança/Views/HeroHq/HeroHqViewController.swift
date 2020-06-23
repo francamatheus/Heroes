@@ -9,21 +9,67 @@
 import UIKit
 
 class HeroHqViewController: UIViewController {
+    
+    var viewModel = HeroHqViewModel()
+    
+    var heroId: String?
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var contentView: UIView!
+    
+    @IBOutlet weak var pictureImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupNavBar()
+        setupLayout()
+        fetchData()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func fetchData() {
+        viewModel.fetchList(success: {
+            self.setupData()
+        }) { _ in
+            self.errorAlert(tryAgainMethod: {
+                self.fetchData()
+            })
+        }
     }
-    */
+    
+    func setupNavBar() {
+        title = "Most Expensive HQ"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
+    func setupLayout() {
+        
+        nameLabel.numberOfLines = 2
+        nameLabel.adjustsFontSizeToFitWidth = true
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 24)
 
+        descriptionLabel.numberOfLines = 0
+        
+        pictureImageView.contentMode = .scaleAspectFit
+        pictureImageView.backgroundColor = .black
+        
+        priceLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        
+    }
+    
+    func setupData() {
+        descriptionLabel.text = viewModel.heroHqData?.description
+        nameLabel.text = viewModel.heroHqData?.title
+        let url = URL(string: viewModel.heroHqData?.image ?? "")
+        pictureImageView.kf.setImage(with: url)
+        priceLabel.text = "Price: U$ \(viewModel.heroHqData?.price ?? "")"
+    }
+    
+    convenience init(heroId: String) {
+        self.init()
+        self.heroId = heroId
+    }
 }

@@ -27,13 +27,12 @@ class AppCoordinator {
     }
     
     class func goToHeroDetail(parent: Any, heroModel: HeroModel) {
-        let newVC = HeroDetailViewController(heroModel: heroModel)
-        AppCoordinator.startViewController(newVC: newVC, parent: parent)
+        let vc = HeroDetailViewController(heroModel: heroModel)
+        AppCoordinator.startViewController(newVC: vc, parent: parent)
     }
     
-    class func goToHeroHq(parent: Any) {
-        let loginVC = HeroHqViewController()
-        let navController = UINavigationController(rootViewController: loginVC)
-        AppCoordinator.startViewController(newVC: navController, parent: parent)
+    class func goToHeroHq(parent: Any, heroId: String) {
+        let vc = HeroHqViewController(heroId: heroId)
+        AppCoordinator.startViewController(newVC: vc, parent: parent)
     }
 }

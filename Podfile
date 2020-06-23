@@ -8,6 +8,6 @@ target 'desafio-ios-matheus-frança' do
   pod "Kingfisher", '~> 5'
   pod "RxSwift", "~> 5"
   pod "SwiftLint"
-  
+  pod 'NVActivityIndicatorView'
 
 end
