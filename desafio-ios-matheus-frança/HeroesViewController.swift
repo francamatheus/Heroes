@@ -15,14 +15,8 @@ class HeroesViewController: UIViewController {
 
     var viewModel = HeroesViewModel()
     
-    var loadingView: NVActivityIndicatorView?
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        let screenSize = UIScreen.main.bounds
-        let frame = CGRect(x: (screenSize.width / 2) - 25, y: (screenSize.height / 2) - 50, width: 50, height: 50)
-        loadingView = NVActivityIndicatorView(frame: frame, type: .ballPulse, color: .red)
-        self.view.addSubview(loadingView ?? UIView())
         edgesForExtendedLayout = []
         setupTableView()
         fetchData()
@@ -45,12 +39,12 @@ class HeroesViewController: UIViewController {
     }
     
     func fetchData() {
-        self.loadingView?.startAnimating()
+        LoadingOverlay.shared.showOverlay(view: self.view)
         viewModel.fetchList(success: {
             self.tableView.reloadData()
-//            self.loadingView?.stopAnimating()
+            LoadingOverlay.shared.hideOverlayView()
         }, error: { _ in
-//            self.loadingView?.stopAnimating()
+            LoadingOverlay.shared.hideOverlayView()
             self.errorAlert(tryAgainMethod: {
                 self.fetchData()
             })

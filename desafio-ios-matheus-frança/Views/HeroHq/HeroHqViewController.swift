@@ -31,9 +31,12 @@ class HeroHqViewController: UIViewController {
     }
     
     func fetchData() {
+        LoadingOverlay.shared.showOverlay(view: self.view)
         viewModel.fetchList(success: {
+            LoadingOverlay.shared.hideOverlayView()
             self.setupData()
         }) { _ in
+            LoadingOverlay.shared.hideOverlayView()
             self.errorAlert(tryAgainMethod: {
                 self.fetchData()
             })

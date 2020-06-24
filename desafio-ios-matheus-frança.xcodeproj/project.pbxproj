@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		200BD5E124A2651B003500A0 /* HeroHqModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200BD5E024A2651B003500A0 /* HeroHqModel.swift */; };
 		200BD5E424A26DA7003500A0 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200BD5E324A26DA7003500A0 /* Alert.swift */; };
+		200BD5E624A39F36003500A0 /* Loading.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200BD5E524A39F36003500A0 /* Loading.swift.swift */; };
 		20EC3C93249D585A00436BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC3C92249D585A00436BCA /* AppDelegate.swift */; };
 		20EC3C9C249D585C00436BCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20EC3C9B249D585C00436BCA /* Assets.xcassets */; };
 		20EC3CAD249D5ACD00436BCA /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC3CAB249D5ACD00436BCA /* HeroesViewController.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		200BD5E024A2651B003500A0 /* HeroHqModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHqModel.swift; sourceTree = "<group>"; };
 		200BD5E324A26DA7003500A0 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		200BD5E524A39F36003500A0 /* Loading.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift.swift; sourceTree = "<group>"; };
 		20EC3C8F249D585A00436BCA /* desafio-ios-matheus-frança.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-ios-matheus-frança.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20EC3C92249D585A00436BCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20EC3C9B249D585C00436BCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				200BD5E324A26DA7003500A0 /* Alert.swift */,
+				200BD5E524A39F36003500A0 /* Loading.swift.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				20EC3C93249D585A00436BCA /* AppDelegate.swift in Sources */,
 				200BD5E124A2651B003500A0 /* HeroHqModel.swift in Sources */,
 				20EC3CC324A0F22300436BCA /* AppCoordinator.swift in Sources */,
+				200BD5E624A39F36003500A0 /* Loading.swift.swift in Sources */,
 				20EC3CB6249D641200436BCA /* HeroHqViewModel.swift in Sources */,
 				20EC3CC1249D648300436BCA /* Constants.swift in Sources */,
 			);
