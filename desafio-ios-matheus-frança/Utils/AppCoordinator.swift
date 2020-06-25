@@ -31,7 +31,7 @@ class AppCoordinator {
         AppCoordinator.startViewController(newVC: vc, parent: parent)
     }
     
-    class func goToHeroHq(parent: Any, heroId: String) {
+    class func goToHeroHq(parent: Any, heroId: Int) {
         let vc = HeroHqViewController(heroId: heroId)
         AppCoordinator.startViewController(newVC: vc, parent: parent)
     }

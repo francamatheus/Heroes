@@ -7,25 +7,33 @@
 //
 
 import Foundation
-//import RxSwift
+import RxSwift
 
 class HeroesViewModel {
-//    let disposeBag = DisposeBag()
-
     var heroesList: [HeroModel] = []
     
+    var offset = 0
+    var limit = 20
+    
+    var isFetchingData = false
+    
+    let disposeBag = DisposeBag()
+    let service = HeroesService()
+    
     func fetchList(success: @escaping () -> Void, error: @escaping (String) -> Void) {
-        
-        let img = "https://s2.glbimg.com/oGOP1N5kCTMEZa35A7OE1zNZsiA=/e.glbimg.com/og/ed/f/original/2020/01/08/baby-yoda.jpg"
-        
-        self.heroesList = [
-            HeroModel(image: img, name: "Herói 1", id: "1"),
-            HeroModel(image: img, name: "Herói 2", id: "2"),
-            HeroModel(image: img, name: "Herói 3", id: "3"),
-            HeroModel(image: img, name: "Herói 4", id: "4"),
-            HeroModel(image: img, name: "Herói 5", id: "5")
-        ]
-        success()
+        if isFetchingData {
+            return
+        }
+        isFetchingData = true
+        service.getHeroes(limit: limit, offset: offset).subscribe(onSuccess: { [weak self] response in
+            self?.isFetchingData = false
+            self?.heroesList += HeroModel.mapFrom(response: response.results)
+            self?.offset += self?.limit ?? 0
+            success()
+        }, onError: { [weak self] errorResponse in
+            self?.isFetchingData = false
+            error(errorResponse.localizedDescription) //TODO: Criar objeto de erro
+        }).disposed(by: disposeBag)
     }
     
     func heroes() -> [HeroModel] {

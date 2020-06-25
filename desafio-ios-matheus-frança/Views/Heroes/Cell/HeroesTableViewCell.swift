@@ -24,7 +24,7 @@ class HeroesTableViewCell: UITableViewCell {
     }
     
     func configCell(data: HeroModel) {
-        setImage(image: data.image)
+        setImage(image: data.image ?? "")
         nameLabel.text = data.name
     }
     

@@ -12,7 +12,7 @@ class HeroHqViewController: UIViewController {
     
     var viewModel = HeroHqViewModel()
     
-    var heroId: String?
+    var heroId: Int?
 
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -71,7 +71,7 @@ class HeroHqViewController: UIViewController {
         priceLabel.text = "Price: U$ \(viewModel.heroHqData?.price ?? "")"
     }
     
-    convenience init(heroId: String) {
+    convenience init(heroId: Int) {
         self.init()
         self.heroId = heroId
     }

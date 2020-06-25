@@ -6,8 +6,7 @@ target 'desafio-ios-matheus-frança' do
   use_frameworks!
   
   pod "Kingfisher", '~> 5'
-  pod "RxSwift", "~> 5"
   pod "SwiftLint"
   pod 'NVActivityIndicatorView'
-
+  pod 'Moya/RxSwift', '~> 12.0'
 end

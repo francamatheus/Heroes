@@ -10,13 +10,16 @@
 		200BD5E124A2651B003500A0 /* HeroHqModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200BD5E024A2651B003500A0 /* HeroHqModel.swift */; };
 		200BD5E424A26DA7003500A0 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200BD5E324A26DA7003500A0 /* Alert.swift */; };
 		200BD5E624A39F36003500A0 /* Loading.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200BD5E524A39F36003500A0 /* Loading.swift.swift */; };
+		200BD5EC24A3F7A0003500A0 /* HeroesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200BD5EB24A3F7A0003500A0 /* HeroesService.swift */; };
+		200BD5F324A41E05003500A0 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200BD5F224A41E05003500A0 /* Endpoint.swift */; };
+		200BD5F524A424D3003500A0 /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200BD5F424A424D3003500A0 /* MD5.swift */; };
+		200BD5F724A53205003500A0 /* HeroesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200BD5F624A53205003500A0 /* HeroesResponseModel.swift */; };
 		20EC3C93249D585A00436BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC3C92249D585A00436BCA /* AppDelegate.swift */; };
 		20EC3C9C249D585C00436BCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20EC3C9B249D585C00436BCA /* Assets.xcassets */; };
 		20EC3CAD249D5ACD00436BCA /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC3CAB249D5ACD00436BCA /* HeroesViewController.swift */; };
 		20EC3CAE249D5ACD00436BCA /* HeroesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20EC3CAC249D5ACD00436BCA /* HeroesViewController.xib */; };
 		20EC3CB0249D5F8D00436BCA /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20EC3CAF249D5F8D00436BCA /* Launch Screen.storyboard */; };
 		20EC3CB2249D63F700436BCA /* HeroesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC3CB1249D63F700436BCA /* HeroesViewModel.swift */; };
-		20EC3CB4249D640600436BCA /* HeroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC3CB3249D640600436BCA /* HeroViewModel.swift */; };
 		20EC3CB6249D641200436BCA /* HeroHqViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC3CB5249D641200436BCA /* HeroHqViewModel.swift */; };
 		20EC3CB9249D642000436BCA /* HeroHqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC3CB7249D642000436BCA /* HeroHqViewController.swift */; };
 		20EC3CBA249D642000436BCA /* HeroHqViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20EC3CB8249D642000436BCA /* HeroHqViewController.xib */; };
@@ -33,6 +36,10 @@
 		200BD5E024A2651B003500A0 /* HeroHqModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHqModel.swift; sourceTree = "<group>"; };
 		200BD5E324A26DA7003500A0 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		200BD5E524A39F36003500A0 /* Loading.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift.swift; sourceTree = "<group>"; };
+		200BD5EB24A3F7A0003500A0 /* HeroesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesService.swift; sourceTree = "<group>"; };
+		200BD5F224A41E05003500A0 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		200BD5F424A424D3003500A0 /* MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5.swift; sourceTree = "<group>"; };
+		200BD5F624A53205003500A0 /* HeroesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesResponseModel.swift; sourceTree = "<group>"; };
 		20EC3C8F249D585A00436BCA /* desafio-ios-matheus-frança.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-ios-matheus-frança.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20EC3C92249D585A00436BCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20EC3C9B249D585C00436BCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -41,7 +48,6 @@
 		20EC3CAC249D5ACD00436BCA /* HeroesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HeroesViewController.xib; path = ../../HeroesViewController.xib; sourceTree = "<group>"; };
 		20EC3CAF249D5F8D00436BCA /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		20EC3CB1249D63F700436BCA /* HeroesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewModel.swift; sourceTree = "<group>"; };
-		20EC3CB3249D640600436BCA /* HeroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroViewModel.swift; sourceTree = "<group>"; };
 		20EC3CB5249D641200436BCA /* HeroHqViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHqViewModel.swift; sourceTree = "<group>"; };
 		20EC3CB7249D642000436BCA /* HeroHqViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHqViewController.swift; sourceTree = "<group>"; };
 		20EC3CB8249D642000436BCA /* HeroHqViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroHqViewController.xib; sourceTree = "<group>"; };
@@ -75,6 +81,31 @@
 				200BD5E524A39F36003500A0 /* Loading.swift.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		200BD5EA24A3F78F003500A0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				200BD5EB24A3F7A0003500A0 /* HeroesService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		200BD5F124A41DC1003500A0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				200BD5F224A41E05003500A0 /* Endpoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		200BD5F824A5325F003500A0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				20EC3CCC24A1016800436BCA /* HeroesModel.swift */,
+				200BD5E024A2651B003500A0 /* HeroHqModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		20EC3C86249D585A00436BCA = {
@@ -133,7 +164,6 @@
 		20EC3CA8249D58EF00436BCA /* HeroDetail */ = {
 			isa = PBXGroup;
 			children = (
-				20EC3CB3249D640600436BCA /* HeroViewModel.swift */,
 				20EC3CBB249D642C00436BCA /* HeroDetailViewController.swift */,
 				20EC3CBC249D642C00436BCA /* HeroDetailViewController.xib */,
 			);
@@ -173,23 +203,26 @@
 		20EC3CC924A1000400436BCA /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				20EC3CCA24A1000A00436BCA /* Models */,
+				200BD5F824A5325F003500A0 /* Models */,
+				200BD5F124A41DC1003500A0 /* Network */,
+				200BD5EA24A3F78F003500A0 /* Service */,
+				20EC3CCA24A1000A00436BCA /* ResponseModel */,
 			);
 			path = Data;
 			sourceTree = "<group>";
 		};
-		20EC3CCA24A1000A00436BCA /* Models */ = {
+		20EC3CCA24A1000A00436BCA /* ResponseModel */ = {
 			isa = PBXGroup;
 			children = (
-				20EC3CCC24A1016800436BCA /* HeroesModel.swift */,
-				200BD5E024A2651B003500A0 /* HeroHqModel.swift */,
+				200BD5F624A53205003500A0 /* HeroesResponseModel.swift */,
 			);
-			path = Models;
+			path = ResponseModel;
 			sourceTree = "<group>";
 		};
 		20EC3CCB24A1003B00436BCA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				200BD5F424A424D3003500A0 /* MD5.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -347,15 +380,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20EC3CB4249D640600436BCA /* HeroViewModel.swift in Sources */,
 				20EC3CC724A0F83000436BCA /* HeroesTableViewCell.swift in Sources */,
 				20EC3CCD24A1016800436BCA /* HeroesModel.swift in Sources */,
 				20EC3CAD249D5ACD00436BCA /* HeroesViewController.swift in Sources */,
+				200BD5EC24A3F7A0003500A0 /* HeroesService.swift in Sources */,
+				200BD5F324A41E05003500A0 /* Endpoint.swift in Sources */,
 				20EC3CBD249D642C00436BCA /* HeroDetailViewController.swift in Sources */,
 				200BD5E424A26DA7003500A0 /* Alert.swift in Sources */,
+				200BD5F724A53205003500A0 /* HeroesResponseModel.swift in Sources */,
 				20EC3CB2249D63F700436BCA /* HeroesViewModel.swift in Sources */,
 				20EC3CB9249D642000436BCA /* HeroHqViewController.swift in Sources */,
 				20EC3C93249D585A00436BCA /* AppDelegate.swift in Sources */,
+				200BD5F524A424D3003500A0 /* MD5.swift in Sources */,
 				200BD5E124A2651B003500A0 /* HeroHqModel.swift in Sources */,
 				20EC3CC324A0F22300436BCA /* AppCoordinator.swift in Sources */,
 				200BD5E624A39F36003500A0 /* Loading.swift.swift in Sources */,
