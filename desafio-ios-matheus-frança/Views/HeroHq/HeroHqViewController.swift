@@ -23,6 +23,7 @@ class HeroHqViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
@@ -30,19 +31,13 @@ class HeroHqViewController: UIViewController {
         fetchData()
     }
     
-    func fetchData() {
-        LoadingOverlay.shared.showOverlay(view: self.view)
-        viewModel.fetchList(success: {
-            LoadingOverlay.shared.hideOverlayView()
-            self.setupData()
-        }) { errorMessage in
-            LoadingOverlay.shared.hideOverlayView()
-            self.errorAlert(message: errorMessage, tryAgainMethod: {
-                self.fetchData()
-            })
-        }
+    // MARK: - Init
+    convenience init(heroId: Int) {
+        self.init()
+        self.viewModel.heroId = heroId
     }
     
+    // MARK: - Setup
     func setupNavBar() {
         title = "Most Expensive HQ"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -71,8 +66,17 @@ class HeroHqViewController: UIViewController {
         priceLabel.text = "Price: U$ \(viewModel.heroHqData?.price ?? 0.0)"
     }
     
-    convenience init(heroId: Int) {
-        self.init()
-        self.viewModel.heroId = heroId
+    // MARK: - Functions
+    func fetchData() {
+        LoadingOverlay.shared.showOverlay(view: self.view)
+        viewModel.fetchList(success: {
+            LoadingOverlay.shared.hideOverlayView()
+            self.setupData()
+        }) { errorMessage in
+            LoadingOverlay.shared.hideOverlayView()
+            self.errorAlert(message: errorMessage, tryAgainMethod: {
+                self.fetchData()
+            })
+        }
     }
 }

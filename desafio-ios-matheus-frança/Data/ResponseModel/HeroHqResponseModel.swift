@@ -9,10 +9,11 @@
 import Foundation
 
 class HeroHqDataResponseModel: Codable {
-    var data: HeroHqsResponseModel?
+    var data: HeroHqListResponseModel?
+    var message: String?
 }
 
-class HeroHqsResponseModel: Codable {
+class HeroHqListResponseModel: Codable {
     var results: [HeroHqResponseModel]?
     var offset: Int?
     var limit: Int?

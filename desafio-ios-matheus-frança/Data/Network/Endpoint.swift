@@ -20,7 +20,11 @@ enum Marvel {
 
 extension Marvel: TargetType {
     public var baseURL: URL {
-        return URL(string: "https://gateway.marvel.com/v1/public")!
+        if let url = URL(string: "https://gateway.marvel.com/v1/public") {
+            return url
+        } else {
+            fatalError("⛔️ Url Doesn't exist") //Nunca caira aqui
+        }
     }
     
     public var path: String {
@@ -67,12 +71,4 @@ extension Marvel: TargetType {
     public var validationType: ValidationType {
         return .successCodes
     }
-}
-
-func +<Key, Value> (lhs: [Key: Value], rhs: [Key: Value]) -> [Key: Value] { // TODO: File for helper
-    var result = lhs
-    rhs.forEach {
-        result[$0] = $1
-    }
-    return result
 }

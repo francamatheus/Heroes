@@ -16,6 +16,7 @@ class HeroesViewController: UIViewController {
     
     var viewModel = HeroesViewModel()
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         LoadingOverlay.shared.showOverlay(view: self.view)
@@ -25,6 +26,7 @@ class HeroesViewController: UIViewController {
         setupNavBar()
     }
     
+    // MARK: - Setup
     func setupNavBar() {
         self.title = "Heróis"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -48,6 +50,7 @@ class HeroesViewController: UIViewController {
         tableView.refreshControl = refreshControl
     }
     
+    // MARK: - Functions
     @objc func refresh(_ sender: AnyObject) {
         if !viewModel.isFetchingData {
             viewModel.heroesList = []
@@ -63,9 +66,9 @@ class HeroesViewController: UIViewController {
         viewModel.fetchList(success: {
             self.tableView.reloadData()
             self.finishLoading()
-        }, error: { _ in
+        }, error: { errorMessage in
             self.finishLoading()
-            self.errorAlert(tryAgainMethod: {
+            self.errorAlert(message: errorMessage, tryAgainMethod: {
                 self.fetchData()
             })
         })

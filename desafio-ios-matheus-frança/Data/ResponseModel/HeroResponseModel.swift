@@ -8,11 +8,11 @@
 
 import Foundation
 
-class HeroesDataResponseModel: Codable {
-    var data: HeroesResponseModel?
+class HeroDataResponseModel: Codable {
+    var data: HeroListResponseModel?
 }
 
-class HeroesResponseModel: Codable {
+class HeroListResponseModel: Codable {
     var results: [HeroResponseModel]?
     var offset: Int?
     var limit: Int?

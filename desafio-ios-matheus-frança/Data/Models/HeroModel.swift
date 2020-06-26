@@ -1,5 +1,5 @@
 //
-//  HeroesModel.swift
+//  HeroModel.swift
 //  desafio-ios-matheus-frança
 //
 //  Created by matheus.s.franca on 22/06/20.
@@ -21,6 +21,7 @@ class HeroModel {
         self.description = description ?? ""
     }
     
+    // MARK: - Mapping
     static func mapFrom(response: [HeroResponseModel]?) -> [HeroModel] {
         var heroModel: [HeroModel] = []
         response?.forEach { (item) in

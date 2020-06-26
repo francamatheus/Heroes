@@ -32,7 +32,11 @@ class HeroesViewModel {
             success()
         }, onError: { [weak self] errorResponse in
             self?.isFetchingData = false
-            error(errorResponse.localizedDescription) //TODO: Criar objeto de erro
+            if let generalError = errorResponse as? GeneralError {
+                error(generalError.status ?? "Unknown Error")
+            } else {
+                error(errorResponse.localizedDescription)
+            }
         }).disposed(by: disposeBag)
     }
     

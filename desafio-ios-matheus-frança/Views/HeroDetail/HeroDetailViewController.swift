@@ -21,6 +21,7 @@ class HeroDetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var hqButton: UIButton!
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
@@ -28,6 +29,13 @@ class HeroDetailViewController: UIViewController {
         setupData()
     }
     
+    // MARK: - Init
+    convenience init(heroModel: HeroModel) {
+        self.init()
+        self.hero = heroModel
+    }
+    
+    // MARK: - Setup
     func setupNavBar() {
         self.title = hero?.name
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -56,11 +64,7 @@ class HeroDetailViewController: UIViewController {
         pictureImageView.kf.setImage(with: url)
     }
     
-    convenience init(heroModel: HeroModel) {
-        self.init()
-        self.hero = heroModel
-    }
-    
+    // MARK: - Actions
     @IBAction func goToHq(_ sender: Any) {
         guard let nav = self.navigationController, let id = hero?.id else { return }
         AppCoordinator.goToHeroHq(parent: nav, heroId: id)

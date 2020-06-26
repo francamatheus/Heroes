@@ -23,6 +23,7 @@ class HeroHqModel: Codable {
         self.price = price ?? 0.0
     }
     
+    // MARK: - Mapping
     static func mapFrom(response: [HeroHqResponseModel]?) -> [HeroHqModel] {
         var heroModel: [HeroHqModel] = []
         response?.forEach { (item) in
@@ -37,6 +38,7 @@ class HeroHqModel: Codable {
         return heroModel
     }
     
+    // MARK: - Functions
     static private func getImage(item: HeroHqResponseModel) -> String {
          let httpImage = "\(item.thumbnail?.path ?? "").\(item.thumbnail?.imageExtension ?? "")"
          let httpsImage = "https" + httpImage.dropFirst(4)
