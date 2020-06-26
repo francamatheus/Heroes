@@ -48,7 +48,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHb-fS-Enj">
-                                    <rect key="frame" x="16" y="735" width="382" height="0.0"/>
+                                    <rect key="frame" x="16" y="304" width="382" height="0.0"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -57,7 +57,7 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="bN6-L9-u8G" firstAttribute="top" secondItem="taW-e9-dCB" secondAttribute="top" id="019-U1-e6g"/>
-                                <constraint firstAttribute="bottom" secondItem="iHb-fS-Enj" secondAttribute="bottom" constant="32" id="0fu-v5-x2R"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="iHb-fS-Enj" secondAttribute="bottom" constant="32" id="0fu-v5-x2R"/>
                                 <constraint firstItem="g1g-gG-EIx" firstAttribute="leading" secondItem="taW-e9-dCB" secondAttribute="leading" constant="16" id="3Cz-ju-ZH5"/>
                                 <constraint firstItem="g1g-gG-EIx" firstAttribute="top" secondItem="3ok-zl-KRG" secondAttribute="bottom" constant="16" id="7Yk-iF-3ID"/>
                                 <constraint firstItem="3ok-zl-KRG" firstAttribute="leading" secondItem="taW-e9-dCB" secondAttribute="leading" constant="16" id="8Xq-iR-FDY"/>
@@ -66,7 +66,7 @@
                                 <constraint firstItem="bN6-L9-u8G" firstAttribute="leading" secondItem="taW-e9-dCB" secondAttribute="leading" id="cdV-yM-pbk"/>
                                 <constraint firstItem="3ok-zl-KRG" firstAttribute="top" secondItem="bN6-L9-u8G" secondAttribute="bottom" constant="16" id="d1C-zA-eim"/>
                                 <constraint firstAttribute="trailing" secondItem="iHb-fS-Enj" secondAttribute="trailing" constant="16" id="jky-FO-rhp"/>
-                                <constraint firstItem="iHb-fS-Enj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="g1g-gG-EIx" secondAttribute="bottom" constant="32" id="qK5-Pb-HuY"/>
+                                <constraint firstItem="iHb-fS-Enj" firstAttribute="top" secondItem="g1g-gG-EIx" secondAttribute="bottom" constant="32" id="qK5-Pb-HuY"/>
                                 <constraint firstAttribute="trailing" secondItem="g1g-gG-EIx" secondAttribute="trailing" constant="16" id="tYj-sc-t6p"/>
                                 <constraint firstItem="iHb-fS-Enj" firstAttribute="leading" secondItem="taW-e9-dCB" secondAttribute="leading" constant="16" id="yXz-OK-vIY"/>
                             </constraints>

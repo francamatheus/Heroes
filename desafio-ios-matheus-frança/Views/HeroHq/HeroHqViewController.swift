@@ -35,9 +35,9 @@ class HeroHqViewController: UIViewController {
         viewModel.fetchList(success: {
             LoadingOverlay.shared.hideOverlayView()
             self.setupData()
-        }) { _ in
+        }) { errorMessage in
             LoadingOverlay.shared.hideOverlayView()
-            self.errorAlert(tryAgainMethod: {
+            self.errorAlert(message: errorMessage, tryAgainMethod: {
                 self.fetchData()
             })
         }
@@ -68,11 +68,11 @@ class HeroHqViewController: UIViewController {
         nameLabel.text = viewModel.heroHqData?.title
         let url = URL(string: viewModel.heroHqData?.image ?? "")
         pictureImageView.kf.setImage(with: url)
-        priceLabel.text = "Price: U$ \(viewModel.heroHqData?.price ?? "")"
+        priceLabel.text = "Price: U$ \(viewModel.heroHqData?.price ?? 0.0)"
     }
     
     convenience init(heroId: Int) {
         self.init()
-        self.heroId = heroId
+        self.viewModel.heroId = heroId
     }
 }

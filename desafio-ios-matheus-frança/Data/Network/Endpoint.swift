@@ -14,7 +14,7 @@ enum Marvel {
     static private let publicKey = "11b46be8855ddfe3b06a2aa8aa5b8eb6"
     static private let privateKey = "427505f79b211a89e487b9ef45415aca07358f1a"
     
-    case comics(id: String)
+    case comics(id: Int, limit: Int)
     case heroes(limit: Int, offset: Int)
 }
 
@@ -25,7 +25,7 @@ extension Marvel: TargetType {
     
     public var path: String {
         switch self {
-        case .comics(let id):
+        case .comics(let id, _):
             return "/characters/\(id)/comics"
         case .heroes:
             return "/characters"
@@ -51,12 +51,12 @@ extension Marvel: TargetType {
         let authParams = ["apikey": Marvel.publicKey, "ts": ts, "hash": hash]
         
         switch self {
-        case .comics:
-            return .requestParameters(parameters: authParams + ["limit": 10],
+        case .comics(_, let limit):
+            return .requestParameters(parameters: authParams + ["limit": limit],
                                       encoding: URLEncoding.default)
         case .heroes(let limit, let offset):
             return .requestParameters(parameters: authParams + ["limit": limit, "offset": offset],
-            encoding: URLEncoding.default)
+                                      encoding: URLEncoding.default)
         }
     }
     

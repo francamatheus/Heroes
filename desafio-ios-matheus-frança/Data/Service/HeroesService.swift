@@ -10,22 +10,38 @@ import Foundation
 import Moya
 import RxSwift
 
-let provider = MoyaProvider<Marvel>()
-
 /// Requests related to the user's account
-struct HeroesService {
+struct HeroService {
     
-    func getHeroes(limit: Int, offset: Int) -> Single<HeroesResponseModel> {
+    let provider = MoyaProvider<Marvel>()
+    
+    func getHeroes(limit: Int, offset: Int) -> Single<HeroesResponseModel?> {
         return provider.rx
             .request(.heroes(limit: limit, offset: offset))
-            .flatMap { response -> Single<HeroesResponseModel> in
-               if let responseType = try? response.map(HeroesDataResponseModel.self) {
-                return Single.just(responseType.data)
-//               } else if let errorType = try? response.map(UserError.self) {
-//                   return Single.error(errorType.error)
-               } else {
-                   fatalError("⛔️ We don't know how to parse that!")
-               }
+            .flatMap { response -> Single<HeroesResponseModel?> in
+                if let responseType = try? response.map(HeroesDataResponseModel.self) {
+                    return Single.just(responseType.data)
+                    //               } else if let errorType = try? response.map(UserError.self) {
+                    //                   return Single.error(errorType.error)
+                } else {
+                    fatalError("⛔️ We don't know how to parse that!")
+                }
             }                      // we map the response to our Codable objects
     }
+    
+    func getComics(limit: Int, id: Int) -> Single<HeroHqsResponseModel?> {
+        return provider.rx
+            .request(.comics(id: id, limit: limit))
+            .flatMap { response -> Single<HeroHqsResponseModel?> in
+                if let responseType = try? response.map(HeroHqDataResponseModel.self) {
+                    return Single.just(responseType.data)
+                    //               } else if let errorType = try? response.map(UserError.self) {
+                    //                   return Single.error(errorType.error)
+                } else {
+                    fatalError("⛔️ We don't know how to parse that!")
+                }
+            }
+    }
 }
+
+//TODO: Handle Error

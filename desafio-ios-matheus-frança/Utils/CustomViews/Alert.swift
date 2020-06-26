@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-     func errorAlert(tryAgainMethod: (() -> Void)? = nil) {
-        let alert = UIAlertController(title: "Error", message: "Error retrieving the infomration, try again later", preferredStyle: UIAlertController.Style.alert)
+    func errorAlert(message: String? = "Error retrieving the infomration, try again later", tryAgainMethod: (() -> Void)? = nil) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
 
         alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertAction.Style.cancel, handler: { _ in
             tryAgainMethod?()

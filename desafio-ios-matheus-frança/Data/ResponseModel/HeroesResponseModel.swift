@@ -8,18 +8,8 @@
 
 import Foundation
 
-class HeroResponseModel: Codable {
-    var thumbnail: HeroThumbnailResponseModel?
-    var name: String?
-    var id: Int?
-    var description: String?
-    
-    init(thumbnail: HeroThumbnailResponseModel, name: String, id: Int, description: String ) {
-        self.thumbnail = thumbnail
-        self.name = name
-        self.id = id
-        self.description = description
-    }
+class HeroesDataResponseModel: Codable {
+    var data: HeroesResponseModel?
 }
 
 class HeroesResponseModel: Codable {
@@ -38,20 +28,30 @@ class HeroesResponseModel: Codable {
     }
 }
 
-class HeroThumbnailResponseModel: Codable {
-    var path: String?
-    var eextension: String?
+class HeroResponseModel: Codable {
+    var thumbnail: HeroThumbnailResponseModel?
+    var name: String?
+    var id: Int?
+    var description: String?
     
-    init(path: String?, eextension: String?) {
-        self.path = path
-        self.eextension = eextension
-    }
-    
-    private enum CodingKeys: String, CodingKey {
-        case path, eextension = "extension"
+    init(thumbnail: HeroThumbnailResponseModel?, name: String?, id: Int?, description: String?) {
+        self.thumbnail = thumbnail
+        self.name = name
+        self.id = id
+        self.description = description
     }
 }
 
-class HeroesDataResponseModel: Codable {
-    var data: HeroesResponseModel
+class HeroThumbnailResponseModel: Codable {
+    var path: String?
+    var imageExtension: String?
+    
+    init(path: String?, imageExtension: String?) {
+        self.path = path
+        self.imageExtension = imageExtension
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case path, imageExtension = "extension"
+    }
 }

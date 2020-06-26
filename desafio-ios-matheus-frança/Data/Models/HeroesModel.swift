@@ -14,17 +14,17 @@ class HeroModel {
     var id: Int?
     var description: String?
     
-    init(image: String, name: String, id: Int, description: String ) {
-        self.image = image
-        self.name = name
-        self.id = id
-        self.description = description
+    init(image: String?, name: String?, id: Int?, description: String?) {
+        self.image = image ?? ""
+        self.name = name ?? ""
+        self.id = id ?? 0
+        self.description = description ?? ""
     }
     
     static func mapFrom(response: [HeroResponseModel]?) -> [HeroModel] {
         var heroModel: [HeroModel] = []
         response?.forEach { (item) in
-            let httpImage = "\(item.thumbnail?.path ?? "").\(item.thumbnail?.eextension ?? "")"
+            let httpImage = "\(item.thumbnail?.path ?? "").\(item.thumbnail?.imageExtension ?? "")"
             let httpsImage = "https" + httpImage.dropFirst(4)
             heroModel.append(HeroModel(
                 image: httpsImage,

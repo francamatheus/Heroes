@@ -18,7 +18,7 @@ class HeroesViewModel {
     var isFetchingData = false
     
     let disposeBag = DisposeBag()
-    let service = HeroesService()
+    let service = HeroService()
     
     func fetchList(success: @escaping () -> Void, error: @escaping (String) -> Void) {
         if isFetchingData {
@@ -27,7 +27,7 @@ class HeroesViewModel {
         isFetchingData = true
         service.getHeroes(limit: limit, offset: offset).subscribe(onSuccess: { [weak self] response in
             self?.isFetchingData = false
-            self?.heroesList += HeroModel.mapFrom(response: response.results)
+            self?.heroesList += HeroModel.mapFrom(response: response?.results)
             self?.offset += self?.limit ?? 0
             success()
         }, onError: { [weak self] errorResponse in
