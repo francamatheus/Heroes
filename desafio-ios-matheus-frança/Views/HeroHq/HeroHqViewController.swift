@@ -74,9 +74,14 @@ class HeroHqViewController: UIViewController {
             self.setupData()
         }) { errorMessage in
             LoadingOverlay.shared.hideOverlayView()
-            self.errorAlert(message: errorMessage, tryAgainMethod: {
-                self.fetchData()
+            
+            let modalViewController = CustomAlertViewController(title: "Error", description: errorMessage,
+                                                                firstButtonText: "Try Again", secondButtonText: "Ok",
+                                                                firstButtonAction: {
+                                                                    self.fetchData()
             })
+            modalViewController.modalPresentationStyle = .overCurrentContext
+            self.present(modalViewController, animated: true, completion: nil)
         }
     }
 }

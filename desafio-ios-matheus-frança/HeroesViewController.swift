@@ -68,9 +68,13 @@ class HeroesViewController: UIViewController {
             self.finishLoading()
         }, error: { errorMessage in
             self.finishLoading()
-            self.errorAlert(message: errorMessage, tryAgainMethod: {
-                self.fetchData()
+            let modalViewController = CustomAlertViewController(title: "Error", description: errorMessage,
+                                                                firstButtonText: "Try Again", secondButtonText: "Ok",
+                                                                firstButtonAction: {
+                                                                    self.fetchData()
             })
+            modalViewController.modalPresentationStyle = .overCurrentContext
+            self.present(modalViewController, animated: true, completion: nil)
         })
     }
     
@@ -117,6 +121,7 @@ extension HeroesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         guard let nav = self.navigationController else { return }
         AppCoordinator.goToHeroDetail(parent: nav, heroModel: viewModel.heroForIndex(indexPath.row))
     }

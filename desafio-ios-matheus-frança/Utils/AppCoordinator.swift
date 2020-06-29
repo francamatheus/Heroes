@@ -10,10 +10,17 @@ import Foundation
 import UIKit
 
 class AppCoordinator {
-    class func startViewController (newVC: UIViewController, parent: Any) {
+    class func startViewController (newVC: UIViewController, parent: Any, animation: Bool = false) {
         if let window = parent as? UIWindow {
             window.rootViewController = newVC
         } else if let nav = parent as? UINavigationController {
+            if animation {
+                let transition = CATransition()
+                transition.duration = 0.5
+                transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+                transition.type = CATransitionType.reveal
+                nav.view.layer.add(transition, forKey: nil)
+            }
             nav.pushViewController(newVC, animated: true)
         } else if let controller = parent as? UIViewController {
             controller.present(newVC, animated: true, completion: nil)
@@ -28,7 +35,7 @@ class AppCoordinator {
     
     class func goToHeroDetail(parent: Any, heroModel: HeroModel) {
         let vc = HeroDetailViewController(heroModel: heroModel)
-        AppCoordinator.startViewController(newVC: vc, parent: parent)
+        AppCoordinator.startViewController(newVC: vc, parent: parent, animation: true)
     }
     
     class func goToHeroHq(parent: Any, heroId: Int) {

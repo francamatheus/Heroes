@@ -14,6 +14,8 @@
 		200BD5F324A41E05003500A0 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200BD5F224A41E05003500A0 /* Endpoint.swift */; };
 		200BD5F524A424D3003500A0 /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200BD5F424A424D3003500A0 /* MD5.swift */; };
 		200BD5F724A53205003500A0 /* HeroResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200BD5F624A53205003500A0 /* HeroResponseModel.swift */; };
+		201B7F1424AA7633003D68E4 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201B7F1224AA7633003D68E4 /* CustomAlertViewController.swift */; };
+		201B7F1524AA7633003D68E4 /* CustomAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 201B7F1324AA7633003D68E4 /* CustomAlertViewController.xib */; };
 		2072930224A68C880006CF01 /* DictionarySum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2072930124A68C880006CF01 /* DictionarySum.swift */; };
 		20AF512924A6625500E26558 /* HeroHqResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AF512824A6625500E26558 /* HeroHqResponseModel.swift */; };
 		20EC3C93249D585A00436BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC3C92249D585A00436BCA /* AppDelegate.swift */; };
@@ -35,12 +37,14 @@
 
 /* Begin PBXFileReference section */
 		200BD5E024A2651B003500A0 /* HeroHqModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHqModel.swift; sourceTree = "<group>"; };
-		200BD5E324A26DA7003500A0 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		200BD5E524A39F36003500A0 /* Loading.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift.swift; sourceTree = "<group>"; };
+		200BD5E324A26DA7003500A0 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = ../CustomViews/Alert.swift; sourceTree = "<group>"; };
+		200BD5E524A39F36003500A0 /* Loading.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Loading.swift.swift; path = "desafio-ios-matheus-frança/Utils/CustomViews/Loading.swift.swift"; sourceTree = SOURCE_ROOT; };
 		200BD5EB24A3F7A0003500A0 /* HeroService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroService.swift; sourceTree = "<group>"; };
 		200BD5F224A41E05003500A0 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		200BD5F424A424D3003500A0 /* MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5.swift; sourceTree = "<group>"; };
 		200BD5F624A53205003500A0 /* HeroResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroResponseModel.swift; sourceTree = "<group>"; };
+		201B7F1224AA7633003D68E4 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomAlertViewController.swift; path = ../CustomAlertViewController.swift; sourceTree = "<group>"; };
+		201B7F1324AA7633003D68E4 /* CustomAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CustomAlertViewController.xib; path = ../CustomAlertViewController.xib; sourceTree = "<group>"; };
 		2072930124A68C880006CF01 /* DictionarySum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionarySum.swift; sourceTree = "<group>"; };
 		20AF512824A6625500E26558 /* HeroHqResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHqResponseModel.swift; sourceTree = "<group>"; };
 		20EC3C8F249D585A00436BCA /* desafio-ios-matheus-frança.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-ios-matheus-frança.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,8 +83,8 @@
 		200BD5E224A26D96003500A0 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				200BD5E324A26DA7003500A0 /* Alert.swift */,
-				200BD5E524A39F36003500A0 /* Loading.swift.swift */,
+				201B7F1724AA7656003D68E4 /* CustomDialog */,
+				201B7F1624AA764F003D68E4 /* Loading */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -108,6 +112,23 @@
 				200BD5E024A2651B003500A0 /* HeroHqModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		201B7F1624AA764F003D68E4 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				200BD5E524A39F36003500A0 /* Loading.swift.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		201B7F1724AA7656003D68E4 /* CustomDialog */ = {
+			isa = PBXGroup;
+			children = (
+				201B7F1224AA7633003D68E4 /* CustomAlertViewController.swift */,
+				201B7F1324AA7633003D68E4 /* CustomAlertViewController.xib */,
+			);
+			path = CustomDialog;
 			sourceTree = "<group>";
 		};
 		2072930024A68C780006CF01 /* Helpers */ = {
@@ -233,6 +254,7 @@
 		20EC3CCB24A1003B00436BCA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				200BD5E324A26DA7003500A0 /* Alert.swift */,
 				200BD5F424A424D3003500A0 /* MD5.swift */,
 			);
 			path = Extensions;
@@ -318,6 +340,7 @@
 			files = (
 				20EC3CB0249D5F8D00436BCA /* Launch Screen.storyboard in Resources */,
 				20EC3CC824A0F83000436BCA /* HeroesTableViewCell.xib in Resources */,
+				201B7F1524AA7633003D68E4 /* CustomAlertViewController.xib in Resources */,
 				20EC3CAE249D5ACD00436BCA /* HeroesViewController.xib in Resources */,
 				20EC3CBE249D642C00436BCA /* HeroDetailViewController.xib in Resources */,
 				20EC3C9C249D585C00436BCA /* Assets.xcassets in Resources */,
@@ -392,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20EC3CC724A0F83000436BCA /* HeroesTableViewCell.swift in Sources */,
+				201B7F1424AA7633003D68E4 /* CustomAlertViewController.swift in Sources */,
 				20EC3CCD24A1016800436BCA /* HeroModel.swift in Sources */,
 				20EC3CAD249D5ACD00436BCA /* HeroesViewController.swift in Sources */,
 				200BD5EC24A3F7A0003500A0 /* HeroService.swift in Sources */,
