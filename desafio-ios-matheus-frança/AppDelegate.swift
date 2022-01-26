@@ -25,13 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 15, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
-                appearance.backgroundColor = .red
-                appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            appearance.backgroundColor = .red
+            appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            UINavigationBar.appearance().tintColor = .white
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
         } else {
             UINavigationBar.appearance().barStyle = UIBarStyle.default
             UINavigationBar.appearance().barTintColor = .red
+            UINavigationBar.appearance().tintColor = .white
             UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         }
     }
