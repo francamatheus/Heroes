@@ -10,10 +10,6 @@ import Foundation
 import Moya
 
 enum Marvel {
-    
-    static private let publicKey = "11b46be8855ddfe3b06a2aa8aa5b8eb6"
-    static private let privateKey = "427505f79b211a89e487b9ef45415aca07358f1a"
-    
     case comics(id: Int, limit: Int)
     case heroes(limit: Int, offset: Int)
 }
@@ -51,8 +47,8 @@ extension Marvel: TargetType {
     
     public var task: Task {
         let ts = "\(Date().timeIntervalSince1970)"
-        let hash = (ts + Marvel.privateKey + Marvel.publicKey).md5
-        let authParams = ["apikey": Marvel.publicKey, "ts": ts, "hash": hash]
+        let hash = (ts + APIKeys.privateKey + APIKeys.publicKey).md5
+        let authParams = ["apikey": APIKeys.publicKey, "ts": ts, "hash": hash]
         
         switch self {
         case .comics(_, let limit):

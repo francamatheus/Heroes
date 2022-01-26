@@ -33,6 +33,7 @@
 		20EC3CC724A0F83000436BCA /* HeroesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC3CC524A0F83000436BCA /* HeroesTableViewCell.swift */; };
 		20EC3CC824A0F83000436BCA /* HeroesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20EC3CC624A0F83000436BCA /* HeroesTableViewCell.xib */; };
 		20EC3CCD24A1016800436BCA /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC3CCC24A1016800436BCA /* HeroModel.swift */; };
+		23283B9127A1EAAF006374EC /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23283B9027A1EAAF006374EC /* APIKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,9 +65,9 @@
 		20EC3CC524A0F83000436BCA /* HeroesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesTableViewCell.swift; sourceTree = "<group>"; };
 		20EC3CC624A0F83000436BCA /* HeroesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroesTableViewCell.xib; sourceTree = "<group>"; };
 		20EC3CCC24A1016800436BCA /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
-		41577290A6D51D16DCBDD372 /* Pods_desafio_ios_matheus_franc_a.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_desafio_ios_matheus_franc_a.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E2034CD8E1C0F4BFE656998 /* Pods-desafio-ios-matheus-frança.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-ios-matheus-frança.release.xcconfig"; path = "Target Support Files/Pods-desafio-ios-matheus-frança/Pods-desafio-ios-matheus-frança.release.xcconfig"; sourceTree = "<group>"; };
-		C85152BAEF03AF9003CB5A6F /* Pods-desafio-ios-matheus-frança.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-ios-matheus-frança.debug.xcconfig"; path = "Target Support Files/Pods-desafio-ios-matheus-frança/Pods-desafio-ios-matheus-frança.debug.xcconfig"; sourceTree = "<group>"; };
+		23283B9027A1EAAF006374EC /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		43ACDC2F606193212ABA39B4 /* Pods-desafio-ios-matheus-frança.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-ios-matheus-frança.debug.xcconfig"; path = "Target Support Files/Pods-desafio-ios-matheus-frança/Pods-desafio-ios-matheus-frança.debug.xcconfig"; sourceTree = "<group>"; };
+		BE4C016902F2B7E4C21021B7 /* Pods-desafio-ios-matheus-frança.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-ios-matheus-frança.release.xcconfig"; path = "Target Support Files/Pods-desafio-ios-matheus-frança/Pods-desafio-ios-matheus-frança.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +146,7 @@
 				20EC3C91249D585A00436BCA /* desafio-ios-matheus-frança */,
 				20EC3C90249D585A00436BCA /* Products */,
 				CBE16C1B3D1D6CC87C2A20F6 /* Pods */,
-				A932AE0DF0767A97E15CDBC1 /* Frameworks */,
+				9018A8B4D9CC644CB46E2C36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,9 +161,9 @@
 		20EC3C91249D585A00436BCA /* desafio-ios-matheus-frança */ = {
 			isa = PBXGroup;
 			children = (
+				20EC3C92249D585A00436BCA /* AppDelegate.swift */,
 				20EC3CC924A1000400436BCA /* Data */,
 				20EC3CBF249D643300436BCA /* Utils */,
-				20EC3C92249D585A00436BCA /* AppDelegate.swift */,
 				20EC3CA6249D588D00436BCA /* Views */,
 				20EC3C9B249D585C00436BCA /* Assets.xcassets */,
 				20EC3CA0249D585C00436BCA /* Info.plist */,
@@ -218,6 +219,7 @@
 				200BD5E224A26D96003500A0 /* CustomViews */,
 				20EC3CCB24A1003B00436BCA /* Extensions */,
 				20EC3CC224A0F22300436BCA /* AppCoordinator.swift */,
+				23283B9027A1EAAF006374EC /* APIKeys.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -260,10 +262,9 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		A932AE0DF0767A97E15CDBC1 /* Frameworks */ = {
+		9018A8B4D9CC644CB46E2C36 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				41577290A6D51D16DCBDD372 /* Pods_desafio_ios_matheus_franc_a.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -271,8 +272,8 @@
 		CBE16C1B3D1D6CC87C2A20F6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C85152BAEF03AF9003CB5A6F /* Pods-desafio-ios-matheus-frança.debug.xcconfig */,
-				7E2034CD8E1C0F4BFE656998 /* Pods-desafio-ios-matheus-frança.release.xcconfig */,
+				43ACDC2F606193212ABA39B4 /* Pods-desafio-ios-matheus-frança.debug.xcconfig */,
+				BE4C016902F2B7E4C21021B7 /* Pods-desafio-ios-matheus-frança.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -284,12 +285,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20EC3CA3249D585C00436BCA /* Build configuration list for PBXNativeTarget "desafio-ios-matheus-frança" */;
 			buildPhases = (
-				02A23E1E76F3384F6857D1A8 /* [CP] Check Pods Manifest.lock */,
+				8A31175505BAEBCA7EB51C34 /* [CP] Check Pods Manifest.lock */,
 				20EC3C8B249D585A00436BCA /* Sources */,
 				20EC3C8C249D585A00436BCA /* Frameworks */,
 				20EC3C8D249D585A00436BCA /* Resources */,
-				797CFEB8F4255E9667A20ED2 /* [CP] Embed Pods Frameworks */,
 				20DE414424A11EB40037F151 /* ShellScript */,
+				9F3EDDD641BA2C3037638C48 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -351,7 +352,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		02A23E1E76F3384F6857D1A8 /* [CP] Check Pods Manifest.lock */ = {
+		20DE414424A11EB40037F151 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		8A31175505BAEBCA7EB51C34 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -373,24 +391,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		20DE414424A11EB40037F151 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
-		};
-		797CFEB8F4255E9667A20ED2 /* [CP] Embed Pods Frameworks */ = {
+		9F3EDDD641BA2C3037638C48 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -420,6 +421,7 @@
 				20EC3CAD249D5ACD00436BCA /* HeroesViewController.swift in Sources */,
 				200BD5EC24A3F7A0003500A0 /* HeroService.swift in Sources */,
 				200BD5F324A41E05003500A0 /* Endpoint.swift in Sources */,
+				23283B9127A1EAAF006374EC /* APIKeys.swift in Sources */,
 				20AF512924A6625500E26558 /* HeroHqResponseModel.swift in Sources */,
 				20EC3CBD249D642C00436BCA /* HeroDetailViewController.swift in Sources */,
 				200BD5E424A26DA7003500A0 /* Alert.swift in Sources */,
@@ -555,7 +557,7 @@
 		};
 		20EC3CA4249D585C00436BCA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C85152BAEF03AF9003CB5A6F /* Pods-desafio-ios-matheus-frança.debug.xcconfig */;
+			baseConfigurationReference = 43ACDC2F606193212ABA39B4 /* Pods-desafio-ios-matheus-frança.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -574,7 +576,7 @@
 		};
 		20EC3CA5249D585C00436BCA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E2034CD8E1C0F4BFE656998 /* Pods-desafio-ios-matheus-frança.release.xcconfig */;
+			baseConfigurationReference = BE4C016902F2B7E4C21021B7 /* Pods-desafio-ios-matheus-frança.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -22,9 +22,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setupNavbar() {
-        UINavigationBar.appearance().barTintColor = .red
-        UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        if #available(iOS 15, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+                appearance.backgroundColor = .red
+                appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        } else {
+            UINavigationBar.appearance().barStyle = UIBarStyle.default
+            UINavigationBar.appearance().barTintColor = .red
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        }
     }
     
     func setRoot() {

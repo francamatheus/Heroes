@@ -7,4 +7,7 @@
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:desafio-ios-matheus-frança.xcodeproj">
+   </FileRef>
 </Workspace>

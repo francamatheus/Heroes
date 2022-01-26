@@ -28,7 +28,7 @@ class HeroesViewController: UIViewController {
     
     // MARK: - Setup
     func setupNavBar() {
-        self.title = "Heróis"
+        self.title = "Heroes"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     

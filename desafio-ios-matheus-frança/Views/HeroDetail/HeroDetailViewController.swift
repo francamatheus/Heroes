@@ -66,14 +66,7 @@ class HeroDetailViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func goToHq(_ sender: Any) {
-        
-        let modalViewController = CustomAlertViewController(title: "Titulo", description: "Descricão comprida", firstButtonText: "Okay", firstButtonAction: {
-            print(" FOI ")
-        })
-        modalViewController.modalPresentationStyle = .overCurrentContext
-        present(modalViewController, animated: true, completion: nil)
-        
-//        guard let nav = self.navigationController, let id = hero?.id else { return }
-//        AppCoordinator.goToHeroHq(parent: nav, heroId: id)
+        guard let nav = self.navigationController, let id = hero?.id else { return }
+        AppCoordinator.goToHeroHq(parent: nav, heroId: id)
     }
 }
